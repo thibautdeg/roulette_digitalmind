@@ -4,8 +4,16 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-
+window.$ = window.jQuery = require('jquery');
 require('./bootstrap');
+
+$(document).ready(function(){
+    $(".menu a").on('click', function() {
+        $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 800);
+    });
+});
 
 window.Vue = require('vue').default;
 

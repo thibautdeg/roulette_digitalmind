@@ -5,36 +5,69 @@ $colorDarkBlue: #30475e;
 $shadowDarkBlue: #293e52;
 $colorBlack: #222831;
 
+$orange: #f55c47;
+$lightGreen: #9fe6a0;
+$green:#4aa96c;
+$Gray:#5b5b5b;
+
 
 body{
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
-    overflow-x: hidden;
-    background: $shadowDarkBlue;
+    background: $colorDarkBlue;
+    height: 100vh;
+    overflow-y:hidden;
+}
+
+.parent{
+    overflow: scroll;
+    height: 100vh;
+    scroll-snap-points-y: repeat(100vh);
+    scroll-snap-type: y mandatory;
+}
+section{
+    height: 100vh !important;
+    scroll-snap-align: start !important;
 }
 
 h1, h2, h3{
     font-family: filicudi-solid,sans-serif;
     font-weight: 400;
     font-style: normal;
+    z-index: 10;
+}
+
+.box-shadow{
+    box-shadow: 0 0px 35px rgba(0, 0, 0, 0.4) !important;
+}
+
+.text-shadow{
+    text-shadow: 0 0px 35px rgba(0, 0, 0, 0.7) !important;
 }
 
 .text-primary{
     color: $colorCrimson !important;
 }
 
+.text-secondary{
+    color: $Gray !important;
+}
+
 .btn-primary{
     color: $colorLightGray !important;
     background: $colorCrimson !important;
     border: none !important;
+
     &:hover{
         background: $colorGray !important;
     }
 }
-.wrapper{
-    scroll-snap-type: y mandatory;
+
+.text-overlay{
+    margin-bottom: -1.5rem;
 }
-.child{
-    scroll-snap-align: start;
+
+.bg-secondary{
+    background: $colorLightGray !important;
 }
 

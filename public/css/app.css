@@ -10838,18 +10838,46 @@ textarea.form-control-lg {
 body {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
-  overflow-x: hidden;
-  background: #293e52;
+  background: #30475e;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.parent {
+  overflow: scroll;
+  height: 100vh;
+  -ms-scroll-snap-points-y: repeat(100vh);
+      scroll-snap-points-y: repeat(100vh);
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
+
+section {
+  height: 100vh !important;
+  scroll-snap-align: start !important;
 }
 
 h1, .h1, h2, .h2, h3, .h3 {
   font-family: filicudi-solid, sans-serif;
   font-weight: 400;
   font-style: normal;
+  z-index: 10;
+}
+
+.box-shadow {
+  box-shadow: 0 0px 35px rgba(0, 0, 0, 0.4) !important;
+}
+
+.text-shadow {
+  text-shadow: 0 0px 35px rgba(0, 0, 0, 0.7) !important;
 }
 
 .text-primary {
   color: #f05454 !important;
+}
+
+.text-secondary {
+  color: #5b5b5b !important;
 }
 
 .btn-primary {
@@ -10861,11 +10889,10 @@ h1, .h1, h2, .h2, h3, .h3 {
   background: #808080 !important;
 }
 
-.wrapper {
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
+.text-overlay {
+  margin-bottom: -1.5rem;
 }
 
-.child {
-  scroll-snap-align: start;
+.bg-secondary {
+  background: #e8e8e8 !important;
 }
