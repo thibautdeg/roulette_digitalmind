@@ -27,7 +27,7 @@
                         </div>
                         <div class="col-6 form-group">
                             <label>Industry:</label>
-                            <select class="form-select" name="freelance-quote-industry" id="freelance-quote-industry">
+                            <select class="form-select form-control" name="freelance-quote-industry" id="freelance-quote-industry">
                                 <option value="">-- Select One --</option>
                                 <option value="Information Technology">Information Technology</option>
                                 <option value="Media &amp; Communications">Media &amp; Communications</option>
@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-6 form-group">
                             <label>Project Type:</label>
-                            <select class="form-select required" name="freelance-quote-project-type" id="freelance-quote-project-type">
+                            <select class="form-select form-control" name="freelance-quote-project-type" id="freelance-quote-project-type">
                                 <option value="">-- Select One --</option>
                                 <option value="PSD to HTML">PSD to HTML</option>
                                 <option value="Canvas">Canvas</option>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="col-6 form-group">
                             <label>Expected Turnaround:</label>
-                            <select class="form-select required" name="freelance-quote-turnaround" id="freelance-quote-turnaround">
+                            <select class="form-select form-control" name="freelance-quote-turnaround" id="freelance-quote-turnaround">
                                 <option value="">-- Select One --</option>
                                 <option value="Less than 3 Days">Less than 3 Days</option>
                                 <option value="Within a Week">Within a Week</option>
