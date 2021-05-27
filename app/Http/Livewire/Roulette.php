@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\Data;
 use App\Models\Game;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 
@@ -20,6 +22,7 @@ class Roulette extends Component
     public $times;
     public $minutes;
     public $hourly;
+    public $userId;
 
 
     protected $rules = [
@@ -28,10 +31,19 @@ class Roulette extends Component
         'color'=>'required|string',
         'plafond'=>'required|integer|min:1',
         'times'=>'integer|min:1',
+        'minutes'=>'integer|min:1',
+        'hourly'=>'integer|min:1',
     ];
     protected $messages = [
 
     ];
+
+    public function mount(){
+        $user = new User();
+        $user->name = "guest";
+        $user->save();
+        $this->userId = $user->id;
+    }
 
     public function submitForm(){
         $this->validate();
@@ -39,6 +51,7 @@ class Roulette extends Component
         $data = new Data();
         $data->total = $this->total;
         $data->bet = $this->bet;
+        $data->user_id = $this->userId;
         $data->save();
 
         $redcount = 0;
@@ -103,16 +116,21 @@ class Roulette extends Component
 
         }
         $this->minutes = $count * $this->minutes;
-        $this->hourly = $this->hourly * ($this->minutes / 60);
-        $this->blackper = ($blackcount / $count) * 100;
-        $this->redper = ($redcount / $count) *100;
-        $this->getGamedata($data->id);
+        $data->hourly = $this->hourly * ($this->minutes / 60);
+        $data->black_procent = ($blackcount / $count) * 100;
+        $data->red_procent = ($redcount / $count) *100;
+        $data->update();
+        $this->getGamedata();
         $this->bet = 0;
         $this->total = 0;
+        $this->plafond = 0;
+        $this->hourly = 0;
+        $this->minutes = 0;
+        $this->times = 0;
     }
 
-    public function getGamedata($id){
-        $this->data = Data::with(['games'])->latest()->first();
+    public function getGamedata(){
+        $this->data = Data::with(['games'])->where('user_id',$this->userId)->get();
     }
 
     public function render()

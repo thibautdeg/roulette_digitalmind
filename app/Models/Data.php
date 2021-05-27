@@ -13,6 +13,11 @@ class Data extends Model
         'total',
         'amount',
         'bet',
+        'user_id',
+        'hourly',
+        'black_procent',
+        'red_procent',
+
     ];
 
     public function games(){

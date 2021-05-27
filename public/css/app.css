@@ -10840,21 +10840,10 @@ body {
   font-size: 15px;
   background: #30475e;
   height: 100vh;
-  overflow-y: hidden;
-}
-
-.parent {
-  overflow: scroll;
-  height: 100vh;
-  -ms-scroll-snap-points-y: repeat(100vh);
-      scroll-snap-points-y: repeat(100vh);
-  -ms-scroll-snap-type: y mandatory;
-      scroll-snap-type: y mandatory;
 }
 
 section {
   height: 100vh !important;
-  scroll-snap-align: start !important;
 }
 
 h1, .h1, h2, .h2, h3, .h3 {

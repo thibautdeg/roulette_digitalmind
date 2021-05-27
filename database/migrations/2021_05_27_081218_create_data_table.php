@@ -15,9 +15,13 @@ class CreateDataTable extends Migration
     {
         Schema::create('data', function (Blueprint $table) {
             $table->id();
+            $table->string('user_id');
             $table->string('total');
             $table->string('amount')->nullable();
             $table->string('bet');
+            $table->string('red_procent')->nullable();
+            $table->string('black_procent')->nullable();
+            $table->string('hourly')->nullable();
 
             $table->timestamps();
         });

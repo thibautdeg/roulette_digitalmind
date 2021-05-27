@@ -16,18 +16,10 @@ body{
     font-size: 15px;
     background: $colorDarkBlue;
     height: 100vh;
-    overflow-y:hidden;
 }
 
-.parent{
-    overflow: scroll;
-    height: 100vh;
-    scroll-snap-points-y: repeat(100vh);
-    scroll-snap-type: y mandatory;
-}
 section{
     height: 100vh !important;
-    scroll-snap-align: start !important;
 }
 
 h1, h2, h3{
@@ -77,4 +69,6 @@ h1, h2, h3{
 .Green, .win{
     color: $green !important;
 }
+
+
 
