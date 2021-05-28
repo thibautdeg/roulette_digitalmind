@@ -23,6 +23,8 @@ class Roulette extends Component
     public $minutes;
     public $hourly;
     public $userId;
+    public $tables;
+    public $table;
 
 
     protected $rules = [
@@ -120,7 +122,7 @@ class Roulette extends Component
         $data->black_procent = ($blackcount / $count) * 100;
         $data->red_procent = ($redcount / $count) *100;
         $data->update();
-        $this->getGamedata();
+        $this->getGamedata($data->id);
         $this->bet = 0;
         $this->total = 0;
         $this->plafond = 0;
@@ -129,8 +131,9 @@ class Roulette extends Component
         $this->times = 0;
     }
 
-    public function getGamedata(){
-        $this->data = Data::with(['games'])->where('user_id',$this->userId)->get();
+    public function getGamedata($id){
+        $this->tabels = Data::with(['games'])->where('user_id',$this->userId)->get();
+        $this->tabel = Data::with(['games'])->where('id',$id)->first();
     }
 
     public function render()
